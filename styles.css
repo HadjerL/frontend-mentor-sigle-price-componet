@@ -1,0 +1,143 @@
+:root{
+--Cyan: hsl(179, 62%, 43%);
+--Cyan-why-us: hsla(179, 47%, 52%, 1);
+--Bright-Yellow: hsl(71, 73%, 54%);
+--Light-Gray: hsl(204, 43%, 93%);
+--Grayish-Blue: hsl(218, 22%, 67%);
+--white: white;
+--white-monthly-sub:  hsl(204, 43%, 93%, .5);
+}
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+}
+body{
+    background-color: var(--Light-Gray);
+}
+
+/*===================================
+|                layou
+| ===================================*/
+.container{
+    border-radius: 5px;
+    margin:10px auto;
+    font-family:'karla';
+    display: grid;
+    max-width: 320px;
+    box-shadow: var(--Grayish-Blue) 0 10px 20px;
+}
+.community{
+    background-color: var(--white);
+    border-radius: 5px 5px 0 0;
+    display: grid;
+    gap: 1.5rem;
+}
+.subscription{
+    background-color:var(--Cyan);
+    display: grid;
+    gap: 1.5rem;
+}
+.why-us{
+    background-color: var(--Cyan-why-us);
+    border-radius:0 0 5px 5px;
+}
+.community,
+.subscription,
+.why-us{
+    padding: 1.5rem;
+}
+
+/*===================================
+|              Typography
+| ===================================*/
+.community h3{
+    color: var(--Cyan);
+}
+.community :nth-child(2){
+    color: var(--Bright-Yellow);
+    font-weight: bold;
+}
+.community :last-child{
+    color: var(--Grayish-Blue);
+    line-height: 28px;
+    font-size: 14px;
+}
+.per-month{
+    color: hsl(204, 43%, 93%, .5);
+}
+.price{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.dollars{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+.subscription,
+.why-us{
+    color: var(--white);
+}
+ul{
+    list-style: none;
+    font-size: 14px;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/*===================================
+|             components
+| ===================================*/
+button{
+    background-color: var(--Bright-Yellow);
+    color: var(--white);
+    font-weight: bold;
+    border: none;
+    padding: 1rem 0;
+    border-radius: 5px;
+    box-shadow: var(--Grayish-Blue) 0 5px 5px;
+}
+button:hover{
+    color: var(--Bright-Yellow);
+    background-color: var(--white);
+    transform: translateY(5px);
+    box-shadow: none;
+}
+
+
+/*===================================
+|            media queries
+| ===================================*/
+@media (min-width: 640px) {
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        grid-template-columns: 1fr 1fr;
+        max-width: 550px;
+        margin: 0;
+    }
+    .community{
+        grid-column: span 2;
+    }
+    .subscription{
+        border-bottom-left-radius: 5px;
+    }
+    .why-us{
+        border-radius: 0 0 5px 0;
+    }
+    .community,
+    .subscription,
+    .why-us{
+        padding: 2rem;
+    }
+}
